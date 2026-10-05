@@ -23,7 +23,6 @@ Claude builds listings as **drafts only**. A human reviews and publishes every l
 | `Gold_Standard_Product_Listing.docx` | **The single source of truth for Standard (single-design) listing copy.** |
 | `Gold_Standard_Bundle_Listing.docx` | **The single source of truth for Bundle listing copy.** |
 | `Intake_Spec_Single_Listing.md` | Fill-in form for building one listing. |
-| `Intake_Spec_Single_Listing_1.md` | Currently identical copy of the single-listing intake spec. |
 | `BATCH_LISTING.md` | Workflow for building several listings at once, with the batch intake table and the asset folder layout. |
 | `Platform_Reference.xlsx` | Live catalog reference: SKU bank, product roster, category mapping. |
 | `CLAUDE_md_Recommendations.md` | Review notes and suggested improvements to `CLAUDE.md` (not yet applied). |
