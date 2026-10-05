@@ -2,3 +2,7 @@
 .DS_Store
 __MACOSX/
 .claude/settings.local.json
+
+# Product photos stay in Google Drive only
+IMGs/*
+!IMGs/.gitkeep

@@ -43,5 +43,5 @@ To change the wording on listings, edit the gold-standard `.docx` files only. `C
 
 ## Repo notes
 
-- `.gitignore` excludes Office lock files (`~$*`), macOS metadata (`.DS_Store`, `__MACOSX/`), and `.claude/settings.local.json`, which holds machine-specific Claude permissions.
+- `.gitignore` excludes Office lock files (`~$*`), macOS metadata (`.DS_Store`, `__MACOSX/`), `.claude/settings.local.json` (which holds machine-specific Claude permissions), and everything inside `IMGs/`. Product photos live in Google Drive only, and `IMGs/.gitkeep` keeps the empty folder in the repo.
 - This folder lives in Google Drive. Avoid editing from two machines at once, and let Drive finish syncing before you commit.
