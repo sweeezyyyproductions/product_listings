@@ -23,10 +23,10 @@
 6. **Always use "outfit" or "clothing"** for festival attire — never "fit" in customer-facing copy.
 7. **Fan-made framing is already built into the locked gold-standard templates through word choice.** Never add an explicit disclaimer sentence anywhere in listing copy (e.g., "this is not an official partnership with [Artist]") — the template's existing wording is how that positioning gets communicated. An inserted disclaimer sentence also breaks the "copy verbatim" rule on its own, since it's text the template doesn't contain.
 8. **Wait for owner approval before any listing goes live.** Claude drafts; a human publishes.
-9. **Set the four standing metaobject-linked metafields on every listing** (Material, Age group, Construction, Target gender) — see Shopify Category & Collections below for the exact values. These are fixed for every SKU regardless of Standard/Bundle or theme, so there's nothing to ask about. Any other metaobject need outside these four is still not a Claude task — flag it, don't create it.
+9. **Set the four standing metaobject-linked metafields on every listing** (Material, Age group, Construction, Target gender) — see Shopify Category & Collections below for the exact values. These are fixed for every sprout SKU regardless of Standard/Bundle or theme, so there's nothing to ask about. **Exception: Kandi Beads have no metal clip, so Material is PLA + Plastic only.** Any other metaobject need outside these four is still not a Claude task — flag it, don't create it.
 10. **If a live Shopify SKU conflicts with the naming convention below, match the live SKU** — do not silently "correct" an existing product's SKU to fit convention.
 11. **If a build-out prompt specifies a variant/pack structure that differs from the defaults in this file** (e.g., individual colors offered in 1-Pack only, while multi-color is offered in 10-, 20-, and 30-Pack only), **build exactly what the prompt specifies.** The prompt's explicit instructions always override the default assumptions below.
-12. **Shopify Product Type is always exactly one of two values — "Artist Sprout" or "Festival Sprout"** — stated per listing on the intake spec (see `BATCH_LISTING.md`); never guess between them. **Collection(s) are specified per prompt, not defaulted** — new collections are actively being introduced, never assume "Artist Sprouts" unless the prompt says so.
+12. **Shopify Product Type is always exactly one of three values — "Artist Sprout", "Festival Sprouts" (plural — the Festival Sprouts smart collection matches only the plural), or "Kandi Beads"** — stated per listing on the intake spec (see `BATCH_LISTING.md`); never guess between them. **Collection(s) are specified per prompt, not defaulted** — new collections are actively being introduced, never assume "Artist Sprouts" unless the prompt says so.
 13. **Every build-out prompt should indicate "Standard" or "Bundle."** If neither is stated, ask before proceeding — pricing, variant structure, and description structure differ enough between the two that guessing is risky (see Bundle Listings section below).
 
 ---
@@ -188,15 +188,17 @@ AQUA · BLCK · BLUE · BRWN · CHRM · CPNK · CYAN · DKBL · DKGR · GLBL · 
 
 ## Shopify Category & Collections
 
-- **Shopify Product Type:** always exactly `Artist Sprout` or `Festival Sprout` — stated per listing on the intake spec (see `BATCH_LISTING.md`), never guessed. Full field mapping (Etsy category path, TikTok Shop category) for each lives in `Platform_Reference.xlsx` → Category Mapping tab.
-- **Shopify Category (taxonomy):** `Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Pins, Claws & Clips` — required on every listing, never skip, regardless of Product Type.
-- **Collections:** specified per prompt — new collections are actively being built out, never default to "Artist Sprouts" unless the prompt says so.
+- **Shopify Product Type:** always exactly `Artist Sprout`, `Festival Sprouts`, or `Kandi Beads` — stated per listing on the intake spec (see `BATCH_LISTING.md`), never guessed. Full field mapping (Etsy category path, TikTok Shop category) for each lives in `Platform_Reference.xlsx` → Category Mapping tab.
+- **Shopify Category (taxonomy):** required on every listing, never skip.
+  - Sprouts (`Artist Sprout`, `Festival Sprouts`): `Apparel & Accessories > Clothing Accessories > Hair Accessories > Hair Pins, Claws & Clips`
+  - Kandi (`Kandi Beads`): `Apparel & Accessories > Jewelry > Charms & Pendants > Charms`
+- **Collections:** specified per prompt — new collections are actively being built out, never default to "Artist Sprouts" unless the prompt says so. Smart collections (`Festival Sprouts`, `Kandi Beads & Charms`) fill themselves from Product Type; don't assign them by hand. `1 FREE Sprout` only when the prompt asks.
 
-**Metafields (every listing, no exceptions):** these four are fixed for every SKU — the physical product doesn't change — so set them the same way every time, never per-prompt:
+**Metafields (every listing):** these four are fixed for every SKU of a given product line — the physical product doesn't change — so set them the same way every time, never per-prompt:
 
 | Metafield | Value |
 |---|---|
-| Material | Polylactic Acid (PLA), Plastic, Metal |
+| Material | Polylactic Acid (PLA), Plastic, Metal — **Kandi Beads: Polylactic Acid (PLA), Plastic** (no metal clip) |
 | Age group | Adults |
 | Construction | Solid |
 | Target gender | Unisex |
@@ -216,11 +218,23 @@ AQUA · BLCK · BLUE · BRWN · CHRM · CPNK · CYAN · DKBL · DKGR · GLBL · 
 
 - **Trigger:** the build-out prompt will explicitly say "Bundle" or "Standard." If it doesn't say either, ask before proceeding.
 - **Pricing:** bundle pricing is unique per bundle and will be specified in the prompt — never apply the Standard Pricing & Pack Sizes table to a bundle.
-- **Variants:** bundles don't carry individual color names — only QTY-pack variants (`10 Pack`, `20 Pack`, `30 Pack` — no 1-Pack, no color prefix — unless the prompt explicitly says otherwise).
+- **Variants:** bundles don't carry individual color names — only QTY-pack variants, no 1-Pack, no color prefix, unless the prompt explicitly says otherwise. Live naming: sprout bundles use `10 Sprout Bundle + (1 FREE)` / `20 Sprout Bundle + (2 FREE)` / `30 Sprout Bundle + (3 FREE)`; kandi bundles use `10 Pack + (1 FREE)` / `20 Pack + (2 FREE)` / `30 Pack + (3 FREE)`, or a single `[paid] Pack + ([free] FREE)` for kandi bracelet bundles.
 - **Default inventory:** 10 Pack → 100, 20 Pack → 50, 30 Pack → 30, unless the prompt specifies otherwise.
 - **SKU:** omit the color segment per the no-color SKU rule above — `[BUNDLE_CODE]_[PCK_SIZE]`.
 - **Copy:** use `Gold_Standard_Bundle_Listing.docx` — nearly the same structure as the Standard template (5 bullets, has a CTA line, no fixed festival list, no signoff — see Product Description Format above). Never use the Standard single-design template for a bundle, and never use the Bundle template for a single-design listing.
 - **Category/Collection/taxonomy:** same rules as Standard listings above — Product Type and Collection per prompt, taxonomy always set.
+
+---
+
+## Kandi Bead Bundles
+
+Clip-less 3D printed kandi charms, currently sold as finished pony-bead bracelets. Full build steps live in **`Kandi_Bundle_Prompt_Template.md`** (4-input prompt: folder, main photo, research links, bundle contents) — follow it for every kandi bundle. Key rules:
+
+- **Product Type** `Kandi Beads`; **Category** Charms (see Shopify Category & Collections); **Material** PLA + Plastic.
+- **Copy:** `Gold_Standard_Bundle_Listing.docx` with five kandi changes — bullet 1 (finished bracelets / beads onto kandi bracelets), bullet 4 (layered multi-color print instead of Sprocket), intro "stranger's wrist" instead of "hat", closing "kandi bracelet" and "kandi bead" instead of clip wording. Venue phrase adapts: camping "two tents over", resort "two cabanas over", city/indoor "two stages over".
+- **Title:** `[Presenting Artist] [Festival/Event] Rave Kandi Bracelet Bundle | EDM Kandi Charms | Festival Bead`. Presenting artist only when the event is "presented by" one; SEO title, meta description and hook use the same name.
+- **Codes:** an event presented by an artist uses that artist's code family (e.g. Wobbleween → `GWNT`). Photo shorthands map to codes in `Platform_Reference.xlsx` → **Shorthand Map**; check it, the SKU Convention tab, and live Shopify before creating a code.
+- **Pricing (proposed, needs Karol's approval):** $3.80 × paid bracelets. Charm-only kandi bundles: $23 / $45 / $67 for 10 / 20 / 30. Rule lives in `Platform_Reference.xlsx` → Pricing Master.
 
 ---
 
@@ -259,10 +273,10 @@ AQUA · BLCK · BLUE · BRWN · CHRM · CPNK · CYAN · DKBL · DKGR · GLBL · 
 - [ ] Original filenames preserved (`_v2` appended only if duplicate)
 - [ ] Image alt text written for every photo
 - [ ] Theme template set to `gp-template-581878106541785827`
-- [ ] Shopify Category set (Hair Pins, Claws & Clips taxonomy)
-- [ ] Shopify Product Type set to `Artist Sprout` or `Festival Sprout` **per the intake spec**
+- [ ] Shopify Category set (Hair Pins, Claws & Clips for sprouts; Charms for Kandi Beads)
+- [ ] Shopify Product Type set to `Artist Sprout`, `Festival Sprouts`, or `Kandi Beads` **per the intake spec**
 - [ ] Collection(s) assigned **per prompt**
-- [ ] Metafields set: Material (Polylactic Acid (PLA), Plastic, Metal), Age group (Adults), Construction (Solid), Target gender (Unisex)
+- [ ] Metafields set: Material (Polylactic Acid (PLA), Plastic, Metal — no Metal for Kandi Beads), Age group (Adults), Construction (Solid), Target gender (Unisex)
 - [ ] Etsy tags applied — no two starting with the same first word
 - [ ] Focus keywords prioritized in tag selection (if provided)
 - [ ] 10 Always Etsy tags + 3 Rotate/Specific selected
@@ -287,5 +301,7 @@ AQUA · BLCK · BLUE · BRWN · CHRM · CPNK · CYAN · DKBL · DKGR · GLBL · 
 | `BATCH_LISTING.md` | .md | Step-by-step multi-listing workflow + asset folder structure |
 | `Shopify_Platform_Reference.xlsx` | .xlsx | Character limits, category mapping, pricing master, Etsy tag bank, keyword bank |
 | `workflows.md` | .md | The most common recurring tasks, broken into executable steps |
-| `Platform_Reference.xlsx` | .xlsx | Full SKU bank, product roster — the live catalog source of truth; this is Karol's working file, shared directly rather than recreated |
+| `Platform_Reference.xlsx` | .xlsx | Full SKU bank, product roster, **Shorthand Map** (photo shorthand → code), Pricing Master — the live catalog source of truth; this is Karol's working file, shared directly rather than recreated |
+| `Kandi_Bundle_Prompt_Template.md` | .md | 4-input build prompt and full build rules for kandi bead/bracelet bundles |
+| `Listing_Prompt_Template.md` | .md | Build prompt for sprout listings (Standard and Bundle) |
 
