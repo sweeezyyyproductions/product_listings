@@ -22,6 +22,7 @@ Claude builds listings as **drafts only**. A human reviews and publishes every l
 | `the-beat-drop-brand-identity.md` | Brand story, audience, and voice rationale. |
 | `Gold_Standard_Product_Listing.docx` | **The single source of truth for Standard (single-design) listing copy.** |
 | `Gold_Standard_Bundle_Listing.docx` | **The single source of truth for Bundle listing copy.** |
+| `Kandi_Bundle_Prompt_Template.md` | Build prompt for clip-less kandi bead bundles (Product Type Kandi Beads), with the Ember Shores bundle as an example. |
 | `Listing_Prompt_Template.md` | Copy-and-paste build prompt for one listing, with filled-in Standard and Bundle examples. |
 | `Intake_Spec_Single_Listing.md` | Fill-in form for building one listing. |
 | `BATCH_LISTING.md` | Workflow for building several listings at once, with the batch intake table and the asset folder layout. |
