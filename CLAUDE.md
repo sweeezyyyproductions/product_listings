@@ -235,7 +235,8 @@ Clip-less 3D printed kandi charms, currently sold as finished pony-bead bracelet
 - **Copy:** `Gold_Standard_Bundle_Listing.docx` with five kandi changes — bullet 1 (finished bracelets / beads onto kandi bracelets), bullet 4 (layered multi-color print instead of Sprocket), intro "stranger's wrist" instead of "hat", closing "kandi bracelet" and "kandi bead" instead of clip wording. Venue phrase adapts: camping "two tents over", resort "two cabanas over", city/indoor "two stages over".
 - **Title:** `[Presenting Artist] [Festival/Event] Rave Kandi Bracelet Bundle | EDM Kandi Charms | Festival Bead`. Presenting artist only when the event is "presented by" one; SEO title, meta description and hook use the same name.
 - **Codes:** an event presented by an artist uses that artist's code family (e.g. Wobbleween → `GWNT`). Photo shorthands map to codes in `Platform_Reference.xlsx` → **Shorthand Map**; check it, the SKU Convention tab, and live Shopify before creating a code.
-- **Pricing (proposed, needs Karol's approval):** $3.80 × paid bracelets. Charm-only kandi bundles: $23 / $45 / $67 for 10 / 20 / 30. Rule lives in `Platform_Reference.xlsx` → Pricing Master.
+- **Variants and pricing (needs Karol's approval):** copy the event's sprout bundle — same pack sizes and inventory, **price = sprout bundle price + $2 per pack**. No sprout bundle for the event → standard $35 / $65 / $90 + $2 = **$37 / $67 / $92**. Kandi pack names use `10 Pack + (1 FREE)`, never `Sprout Bundle`; the free item is a rave sprout. Older charm-only bundles (SSMF2, HWBD1, EMBD1) are $23 / $45 / $67.
+- **When copying from a sprout listing, never carry over:** Metal (sprout only), the Hair Pins category (sprout only), or "Sprout Bundle" pack names (sprout only).
 
 ---
 

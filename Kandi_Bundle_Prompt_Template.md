@@ -23,10 +23,8 @@ Build a draft Shopify listing for the kandi bundle in this folder, following Kan
    - [design] x [qty]   ([colors, if more than one])
    - [design] x [qty]
    - [design] x [qty]
-6. PACK SIZES & PRICING (bundles of the above):
-   - [pieces, e.g. 19] Pack: $[price] — inventory [qty]
-   - [pieces] Pack: $[price] — inventory [qty]
-   - [pieces] Pack: $[price] — inventory [qty]
+6. PACK SIZES & PRICING (optional — leave blank to copy the event's sprout bundle):
+   - [N] Pack: $[price] — inventory [qty]
 ```
 
 ### Example (Wobbleween, as built)
@@ -48,11 +46,9 @@ Build a draft Shopify listing for the kandi bundle in this folder, following Kan
    - doll x 1
    - 3 headed flower x 1
    - flower x 3 (3 colors)
-6. PACK SIZES & PRICING (bundles of the above):
-   - 19 Pack: $26 — inventory 30
-   - 38 Pack: $48 — inventory 15
-   - 57 Pack: $71 — inventory 10
+6. PACK SIZES & PRICING (optional — leave blank to copy the event's sprout bundle):
 ```
+Result: copied from the Wobbleween sprout bundle (GWNT2) → `10 Pack + (1 FREE)` $52 / `20 Pack + (2 FREE)` $99 / `30 Pack + (3 FREE)` $144.50, inventory 100 / 50 / 30.
 
 ---
 
@@ -76,17 +72,28 @@ Build a draft Shopify listing for the kandi bundle in this folder, following Kan
 - Product Type `Kandi Beads`. Vendor The Beat Drop. Theme template `gp-template-581878106541785827`.
 - **Category: `Apparel & Accessories > Jewelry > Charms & Pendants > Charms`**.
 - Metafields: Material **PLA, Plastic** (no Metal); Age group Adults; Construction Solid; Target gender Unisex; **Color: Multicolor; Jewelry material: Plastic**. Jewelry type is left for the owner.
-- **Variants — exactly the packs in input 6.** Names:
-  - With a free sprout: `[N] Pack + ([k] FREE Sprout[s])` — **1 free sprout per bundle**, so 2 bundles = 2 sprouts (e.g. `19 Pack + (1 FREE Sprout)`, `38 Pack + (2 FREE Sprouts)`, `57 Pack + (3 FREE Sprouts)`).
-  - No free item: `[N] Pack`.
-- SKU `[CODE]_PCK[N]` per pack. Price and inventory exactly as given. A blank price gets a suggestion ($3.80 × bracelets) flagged "Needs approval: Karol".
-- **Pack Size option is linked** to the store's Pack Size metaobjects (like SSMF2). Missing entries are created with the exact variant name, then linked.
+- **Variants — copied from the event's sprout bundle** (input 6 blank):
+  - Same pack sizes as the sprout bundle (usually 10 / 20 / 30), same inventory.
+  - **Price = sprout bundle price + $2 per pack** (e.g. sprout $50 / $97 / $142.50 → kandi $52 / $99 / $144.50).
+  - If the event has no sprout bundle, use the standard sprout bundle prices $35 / $65 / $90 → kandi **$37 / $67 / $92**, inventory 100 / 50 / 30.
+  - If input 6 is filled in, use exactly those packs, prices and inventory instead.
+- **Names follow the product type — never copy the sprout wording:**
+
+  | | Sprout | Kandi Beads |
+  |---|---|---|
+  | Pack name | `10 Sprout Bundle + (1 FREE)` | `10 Pack + (1 FREE)` |
+  | Material | PLA, Plastic, Metal | PLA, Plastic |
+  | Category | Hair Pins, Claws & Clips | Charms |
+
+- The free item is a rave sprout: 1 per 10 (`+ (1 FREE)` / `(2 FREE)` / `(3 FREE)`); say so in the stock-up bullet.
+- SKU `[CODE]_PCK[N]` per pack.
+- **Pack Size option is linked** to the store's Pack Size metaobjects (like SSMF2). Standard 10 / 20 / 30 entries already exist; missing ones are created with the exact variant name, then linked.
 - All variants show the main photo. Shipping weight is left at 0 and flagged.
 
 **Collections**
 - Festival/event collection: `[Festival] Music Festival`, or the event name for one-off events (e.g. `Wobbleween`). Created if missing, visible on the same 11 sales channels as the other festival collections.
 - `Kandi Beads & Charms` is joined automatically from the Product Type.
-- `1 FREE Sprout` is automatic too — it only picks up products with a `10 Pack + (1 FREE)` variant. Other pack sizes won't appear there unless its rule is changed.
+- `1 FREE Sprout` is automatic too — it picks up any product with a `10 Pack + (1 FREE)` variant, so standard kandi packs join it on their own.
 
 **Title & SEO**
 - Bracelets: `[Presenting Artist] [Event] Rave Kandi Bracelet Bundle | EDM Kandi Charms | Festival Bead`
@@ -99,7 +106,7 @@ Build a draft Shopify listing for the kandi bundle in this folder, following Kan
 - Bullet 4: "Layered multi-color print" instead of Sprocket.
 - Intro: "stranger's wrist" instead of "hat".
 - Closing: "kandi bracelet" and "kandi bead" instead of clip wording.
-- Stock-up bullet: the pack sizes, plus the free sprout when there is one ("every 19 bracelets come with a FREE rave sprout…").
+- Stock-up bullet: the pack sizes, assorted designs/colors, and the free sprouts ("grab a 10-, 20-, or 30-pack of assorted [Event] designs and colors, each with FREE rave sprouts…").
 - Mentions colorways when a design comes in more than one color.
 - Bullets 2, 3, K-Hole and the CTA stay verbatim. No signoff.
 
