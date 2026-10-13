@@ -18,7 +18,7 @@ Build a draft Shopify listing for the kandi bundle in this folder, following Kan
 1. FOLDER: IMGs/[folder name]/
 2. MAIN PHOTO: [filename]
 3. RESEARCH: [website link] [Instagram link]   (or attach the poster)
-4. WHAT SHIPS: [charms only | charms + pony-bead bracelets]
+4. WHAT SHIPS: charms only (bracelets are never included — 2026-10-13)
 5. ONE BUNDLE = [total] pieces + FREE ITEM: [1 sprout | none]
    - [design] x [qty]   ([colors, if more than one])
    - [design] x [qty]
@@ -36,7 +36,7 @@ Build a draft Shopify listing for the kandi bundle in this folder, following Kan
 1. FOLDER: IMGs/WW/
 2. MAIN PHOTO: WW-Bundle-FestBeads-43.jpg
 3. RESEARCH: (poster attached)
-4. WHAT SHIPS: charms + pony-bead bracelets
+4. WHAT SHIPS: charms only
 5. ONE BUNDLE = 19 pieces + FREE ITEM: 1 sprout
    - CollabTitle1 x 3 (3 colors)
    - CollabTitle2 x 3 (3 colors)
@@ -64,7 +64,7 @@ Result: copied from the Wobbleween sprout bundle (GWNT2) → `10 Pack + (1 FREE)
 **Research** (from the links or poster)
 - Dates, venue, camping vs. resort/city, curator/headliner, and whether the event is **presented by** an artist. Asks only if none of this is clear.
 - Camping → "two tents over"; resort → "two cabanas over"; city/indoor → "two stages over".
-- Names the curator/presenting artist in the intro ("the kind of kandi bracelet [Artist] fans wear…"); uses "you" if there is none.
+- Names the curator/presenting artist in the intro ("the kind of kandi charm [Artist] fans wear…"); uses "you" if there is none.
 - Picks 2–3 fitting places for the closing paragraph.
 - Lineup artists are **not** named in copy unless they're the curator/presenter. Unknown logos and collab designs are described by what's visible, never guessed.
 
@@ -96,13 +96,15 @@ Result: copied from the Wobbleween sprout bundle (GWNT2) → `10 Pack + (1 FREE)
 - `1 FREE Sprout` is automatic too — it picks up any product with a `10 Pack + (1 FREE)` variant, so standard kandi packs join it on their own.
 
 **Title & SEO**
-- Bracelets: `[Presenting Artist] [Event] Rave Kandi Bracelet Bundle | EDM Kandi Charms | Festival Bead`
-- Charms only: `[Presenting Artist] [Event] Rave Kandi Bundle | EDM Kandi Charms | Festival Bead`
+- Bundles: `[Presenting Artist] [Event] Rave Kandi Charm Bundle | EDM Kandi Beads | Festival Bead`
+- Singles: `[Artist] Rave Kandi Charm | EDM Kandi Beads | Festival Bead | [Colors]`
+- **Never** "Kandi Bracelet" or "Bracelet Bundle" in a title, SEO title or meta — kandi listings are charms only, and saying bracelet is misleading (Karol, 2026-10-13).
 - Presenting artist only when the event is "presented by" one. SEO title (<60), meta description (<160) and the hook use the same name.
 - 13 Etsy tags (<20 chars, no repeated first word), saved as Shopify tags.
 
 **Description** — `Gold_Standard_Bundle_Listing.docx` with the kandi changes:
-- Bullet 1: bracelets → "Kandi bracelets ready to trade — 3D printed charms come strung on pony bead kandi bracelets…"; charms only → "Kandi charm that travels — beads onto kandi bracelets, cuffs, or necklaces…".
+- **First line, always:** `<p><strong>KANDI CHARMS ONLY - BRACELET NOT INCLUDED</strong></p>` (Karol, 2026-10-13). Meta description ends with "Charms only, bracelet not included." (or "Charms only, no bracelet." when space is tight).
+- Bullet 1: "Kandi charm that travels — beads onto kandi bracelets, cuffs, or necklaces…" (plural for bundles). Never say charms come strung on a bracelet.
 - Bullet 4: "Layered multi-color print" instead of Sprocket.
 - Intro: "stranger's wrist" instead of "hat".
 - Closing: "kandi bracelet" and "kandi bead" instead of clip wording.
@@ -110,7 +112,11 @@ Result: copied from the Wobbleween sprout bundle (GWNT2) → `10 Pack + (1 FREE)
 - Mentions colorways when a design comes in more than one color.
 - Bullets 2, 3, K-Hole and the CTA stay verbatim. No signoff.
 
-**Alt text:** `[Event] rave kandi bracelet bundle — [what the photo shows]`, including bead colors.
+**Alt text:** `[Event] rave kandi charm bundle — [what the photo shows]`, including colors.
+
+**Photos (TikTok Shop is strict — images must show only what's sold):**
+- Most photos are of the charms themselves. For multi-packs, show the pack as a bunch — e.g. 10, 20 or 30 charms in a bowl or cup.
+- At most 1–2 bracelet styling photos per listing, never the main photo.
 
 **When finished**
 - Runs the CLAUDE.md checklist, adds the code to the Product Roster and SKU Convention tabs (plus Shorthand Map if new), and gives a build summary with a **"Needs Karol's review"** list.

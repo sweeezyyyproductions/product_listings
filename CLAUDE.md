@@ -218,7 +218,7 @@ AQUA · BLCK · BLUE · BRWN · CHRM · CPNK · CYAN · DKBL · DKGR · GLBL · 
 
 - **Trigger:** the build-out prompt will explicitly say "Bundle" or "Standard." If it doesn't say either, ask before proceeding.
 - **Pricing:** bundle pricing is unique per bundle and will be specified in the prompt — never apply the Standard Pricing & Pack Sizes table to a bundle.
-- **Variants:** bundles don't carry individual color names — only QTY-pack variants, no 1-Pack, no color prefix, unless the prompt explicitly says otherwise. Live naming: sprout bundles use `10 Sprout Bundle + (1 FREE)` / `20 Sprout Bundle + (2 FREE)` / `30 Sprout Bundle + (3 FREE)`; kandi bundles use `10 Pack + (1 FREE)` / `20 Pack + (2 FREE)` / `30 Pack + (3 FREE)`, or a single `[paid] Pack + ([free] FREE)` for kandi bracelet bundles.
+- **Variants:** bundles don't carry individual color names — only QTY-pack variants, no 1-Pack, no color prefix, unless the prompt explicitly says otherwise. Live naming: sprout bundles use `10 Sprout Bundle + (1 FREE)` / `20 Sprout Bundle + (2 FREE)` / `30 Sprout Bundle + (3 FREE)`; kandi bundles use `10 Pack + (1 FREE)` / `20 Pack + (2 FREE)` / `30 Pack + (3 FREE)`, or a single `[paid] Pack + ([free] FREE)` for fixed-content kandi charm bundles.
 - **Default inventory:** 10 Pack → 100, 20 Pack → 50, 30 Pack → 30, unless the prompt specifies otherwise.
 - **SKU:** omit the color segment per the no-color SKU rule above — `[BUNDLE_CODE]_[PCK_SIZE]`.
 - **Copy:** use `Gold_Standard_Bundle_Listing.docx` — nearly the same structure as the Standard template (5 bullets, has a CTA line, no fixed festival list, no signoff — see Product Description Format above). Never use the Standard single-design template for a bundle, and never use the Bundle template for a single-design listing.
@@ -228,14 +228,15 @@ AQUA · BLCK · BLUE · BRWN · CHRM · CPNK · CYAN · DKBL · DKGR · GLBL · 
 
 ## Kandi Bead Bundles
 
-Clip-less 3D printed kandi charms, currently sold as finished pony-bead bracelets. Full build steps live in **`Kandi_Bundle_Prompt_Template.md`** (4-input prompt: folder, main photo, research links, bundle contents) — follow it for every kandi bundle. Key rules:
+Clip-less 3D printed kandi charms, sold as **charms only — no bracelet** (Karol, 2026-10-13). Full build steps live in **`Kandi_Bundle_Prompt_Template.md`** (4-input prompt: folder, main photo, research links, bundle contents) — follow it for every kandi bundle. Key rules:
 
 - **Product Type** `Kandi Beads`; **Category** Charms (see Shopify Category & Collections); **Material** PLA + Plastic; **Color** Multicolor; **Jewelry material** Plastic; Jewelry type left for the owner.
 - **Pack Size option is linked** to the `Pack Size` metaobjects (like SSMF2). Missing entries may be created for kandi listings (see Rule 9 exception).
-- **Copy:** `Gold_Standard_Bundle_Listing.docx` with five kandi changes — bullet 1 (finished bracelets / beads onto kandi bracelets), bullet 4 (layered multi-color print instead of Sprocket), intro "stranger's wrist" instead of "hat", closing "kandi bracelet" and "kandi bead" instead of clip wording. Venue phrase adapts: camping "two tents over", resort "two cabanas over", city/indoor "two stages over".
-- **Title:** `[Presenting Artist] [Festival/Event] Rave Kandi Bracelet Bundle | EDM Kandi Charms | Festival Bead`. Presenting artist only when the event is "presented by" one; SEO title, meta description and hook use the same name.
+- **Copy:** first line is always **KANDI CHARMS ONLY - BRACELET NOT INCLUDED** (bold). Then `Gold_Standard_Bundle_Listing.docx` with five kandi changes — bullet 1 ("Kandi charm that travels — beads onto kandi bracelets…"; never "strung on a bracelet"), bullet 4 (layered multi-color print instead of Sprocket), intro "stranger's wrist" instead of "hat", closing "kandi bracelet" and "kandi bead" instead of clip wording. Venue phrase adapts: camping "two tents over", resort "two cabanas over", city/indoor "two stages over".
+- **Title:** bundles `[Presenting Artist] [Festival/Event] Rave Kandi Charm Bundle | EDM Kandi Beads | Festival Bead`; singles `[Artist] Rave Kandi Charm | EDM Kandi Beads | Festival Bead | [Colors]`. Never "Kandi Bracelet" in any title, SEO title or meta (misleading — charms only). Presenting artist only when the event is "presented by" one; SEO title, meta description and hook use the same name.
 - **Codes:** an event presented by an artist uses that artist's code family (e.g. Wobbleween → `GWNT`). Photo shorthands map to codes in `Platform_Reference.xlsx` → **Shorthand Map**; check it, the SKU Convention tab, and live Shopify before creating a code.
 - **Variants and pricing (needs Karol's approval):** copy the event's sprout bundle — same pack sizes and inventory, **price = sprout bundle price + $2 per pack**. No sprout bundle for the event → standard $35 / $65 / $90 + $2 = **$37 / $67 / $92**. Kandi pack names use `10 Pack + (1 FREE)`, never `Sprout Bundle`; the free item is a rave sprout. Older charm-only bundles (SSMF2, HWBD1, EMBD1) are $23 / $45 / $67.
+- **Photos (TikTok Shop rule):** images show only what's sold — mostly the charms, multi-packs as a bunch (10/20/30 in a bowl or cup); at most 1–2 bracelet styling shots, never the main photo.
 - **When copying from a sprout listing, never carry over:** Metal (sprout only), the Hair Pins category (sprout only), or "Sprout Bundle" pack names (sprout only).
 
 ---
