@@ -307,5 +307,6 @@ Clip-less 3D printed kandi charms, sold as **charms only — no bracelet** (Karo
 | `workflows.md` | .md | The most common recurring tasks, broken into executable steps |
 | `Platform_Reference.xlsx` | .xlsx | Full SKU bank, product roster, **Shorthand Map** (photo shorthand → code), Pricing Master — the live catalog source of truth; this is Karol's working file, shared directly rather than recreated |
 | `Kandi_Bundle_Prompt_Template.md` | .md | 4-input build prompt and full build rules for kandi bead/bracelet bundles |
+| `Print_To_Listing_SOP.md` | .md | Steps from Cody's print file to draft listing: batch slicing (`DesktopSliced Exportsbatch_slice.py`), intake, 3DPrintForce, photos, listing |
 | `Listing_Prompt_Template.md` | .md | Build prompt for sprout listings (Standard and Bundle) |
 
