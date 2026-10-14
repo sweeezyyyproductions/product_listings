@@ -40,6 +40,11 @@ step is saved as its own tool.
     - The 3DPrintForce row: print time, grams per color, printer, quantity per plate
 12. Approve any new code or shorthand, and correct colorway names if needed.
 13. Claude adds the rows to `Platform_Reference.xlsx` and to the 3DPrintForce bulk CSV.
+    The CSV is made by `scripts/make_3dpf_csv.py` (one row per production plate = one colorway, time and grams per piece):
+    ```bash
+    python scripts\make_3dpf_csv.py "Festivals\Boo Seattle" --prefix "BOO Seattle" --code BSBD1
+    ```
+    Output: `Desktop\Sliced ExportsDPrintForce_<name>.csv` plus a `_plates.csv` with every plate's totals.
 14. **Karol** uploads the CSV to 3DPrintForce and confirms pricing per sales channel.
 
 ## Printing and photos
