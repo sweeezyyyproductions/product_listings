@@ -44,7 +44,7 @@ step is saved as its own tool.
     ```bash
     python scripts\make_3dpf_csv.py "Festivals\Boo Seattle" --prefix "BOO Seattle" --code BSBD1
     ```
-    Output: `Desktop\Sliced ExportsDPrintForce_<name>.csv` plus a `_plates.csv` with every plate's totals.
+    Output: `Desktop\Sliced Exports\3DPrintForce_<name>.csv` plus a `_plates.csv` with every plate's totals.
 14. **Karol** uploads the CSV to 3DPrintForce and confirms pricing per sales channel.
 
 ## Printing and photos
