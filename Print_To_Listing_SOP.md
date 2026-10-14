@@ -1,7 +1,8 @@
 # SOP: From Print File to Product Listing
 
 Covers the full path from Cody's Bambu print file to a draft Shopify listing, using the batch slicer
-at `C:\Users\DATA A\Desktop\Sliced Exports\batch_slice.py`.
+at `C:\Users\DATA A\Desktop\Sliced Exports\batch_slice.py`. A backup copy lives in this repo at
+`scripts/batch_slice.py`; both write sliced files to `Desktop\Sliced Exports`, never into the repo.
 
 Steps 10–13 (reading sliced files and filling the sheets) are done by Claude on request until that
 step is saved as its own tool.
