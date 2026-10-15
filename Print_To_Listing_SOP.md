@@ -65,6 +65,7 @@ step is saved as its own tool.
 
 23. Set the PC to never sleep, then run `python batch_slice.py` with no folder name. It takes about 6–12 hours; if it stops, run it again and it skips plates already done.
 24. Tell Claude: *"Full slice done, build the 3DPrintForce bulk CSV."*
+    Claude runs `python scripts\make_3dpf_all.py`, which writes `3DPrintForce_ALL.csv` (one row per design + colorway), `_plates.csv` (every plate) and `_codes.csv` (code family per folder, existing vs proposed) to `Desktop\Sliced Exports`.
 
 ## Notes
 
