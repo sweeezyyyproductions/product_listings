@@ -51,8 +51,8 @@ step is saved as its own tool.
 
 15. Print the plates.
 16. Shoot photos, mostly charms only: each design, each color, and the pack as a bunch in a bowl or cup. Take at most 1–2 bracelet styling shots.
-17. Drop the photos in `Product Photos\Dump\`.
-18. Tell Claude: *"Rename and file the Dump photos for [event/artist]."* Claude names them from the intake sheet and moves them to `Product Photos\[Name]\Beads\`.
+17. Drop the photos in `G:\My Drive\📸 Product Photos\Dump\`.
+18. Tell Claude: *"Rename and file the Dump photos for [event/artist]."* Claude names them from the intake sheet and moves them to `📸 Product Photos\[Name]\Beads\`.
 
 ## Listing
 
