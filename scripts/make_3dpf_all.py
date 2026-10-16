@@ -9,7 +9,8 @@ Writes to Desktop\\Sliced Exports:
   - 3DPrintForce_ALL_codes.csv    folder -> code family used in the SKUs (existing vs proposed, for review)
 
 Same rules as make_3dpf_csv.py: a plate with >= 20 objects is one model (one colorway); a design with no
-such plate uses its fullest plate. Time and grams are per piece.
+such plate uses its fullest plate. Time and grams are per piece. Only the highest V# of each design is used
+(V3 > V2 > V1), per Cody: older versions are superseded, and non-stock plates are coloring/preview plates.
 """
 import csv, os, re, sys
 from collections import defaultdict
@@ -63,11 +64,29 @@ def main():
             rel = os.path.relpath(dp, OUT_ROOT).split(os.sep)
             cat = rel[0]
             owner = rel[1] if len(rel) > 1 else re.sub(r"_plate_\d+\.gcode\.3mf$", "", f)
+            if owner == "Custom Orders" and len(rel) > 2:
+                owner = rel[2]  # customer / brand folder, e.g. "Thomas (DD Dubz)"
             try:
                 p = read_plate(os.path.join(dp, f))
             except Exception as e:
                 print("skip", f, e); continue
+            v = re.search(r"(?:^|[\s_(])V(\d+)\b", f, re.I)
+            p["version"] = int(v.group(1)) if v else 0
             groups[(cat, owner)][design_of(f, owner)].append((f, p))
+
+    # Merge spelling variants of the same design within a folder (e.g. "DD Dubz With Cherry" vs
+    # "DD Dubs - With Cherry"), so the version filter below compares V1/V2/V3 of the same design.
+    import difflib
+    for key in list(groups):
+        merged = {}
+        for design in sorted(groups[key], key=len, reverse=True):
+            norm = re.sub(r"[^a-z0-9]", "", design.lower()).replace("z", "s")
+            match = next((m for m in merged if difflib.SequenceMatcher(None, norm, merged[m][0]).ratio() >= 0.9), None)
+            if match:
+                merged[match][1].extend(groups[key][design])
+            else:
+                merged[design] = (norm, list(groups[key][design]))
+        groups[key] = {d: v[1] for d, v in merged.items()}
 
     rows, plates_out, codes, used = [], [], [], set()
     max_sub = 1
@@ -80,7 +99,11 @@ def main():
             for f, p in ps:
                 plates_out.append([cat, owner, design, p["qty"], round(p["sec"] / 60, 1), p["g"], p["printer"],
                                    "; ".join(f"{x['label']} {x['g']}g" for x in p["fil"]), f])
-            prod = [x for x in ps if x[1]["qty"] >= MIN_QTY] or [max(ps, key=lambda x: x[1]["qty"])]
+            # Highest version only (Cody: V3 is the most reliable; older versions are superseded).
+            top = max(x[1]["version"] for x in ps)
+            latest = [x for x in ps if x[1]["version"] == top]
+            # Stock plates = plates filled up with the design; other plates are coloring / preview plates.
+            prod = [x for x in latest if x[1]["qty"] >= MIN_QTY] or [max(latest, key=lambda x: x[1]["qty"])]
             seen = set()
             for f, p in prod:
                 if not p["qty"] or not p["fil"]:

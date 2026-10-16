@@ -71,5 +71,15 @@ step is saved as its own tool.
 
 - Sliced files go to `Desktop\Sliced Exports\` in the same folder structure as `Sprout Designs`. Cody's originals are never changed.
 - Each plate is sliced separately (`[file]_plate_[N].gcode.3mf`), because slicing all plates at once fails on any empty plate.
-- Common FAILED reasons: *"G-code outside of the printable area"* (move the part or wipe tower inward) and *"Invalid parameter value(s)"* (re-save the file in the current Bambu Studio).
 - Only 9 of 427 project files had slice data saved inside them (checked 2026-10-14), so slicing is needed for print time and grams.
+
+## How Cody's Bambu files work (confirmed with Cody, 2026-10-16)
+
+- **Versions:** the highest V# is the reliable one (V3 > V2 > V1). Older versions are superseded; the CSV scripts use only the latest version of each design.
+- **Plates:** each file has several plates. **Stock plates** are filled up with one design in one colorway; those are what get printed and what the CSV uses (one row per stock plate). Other plates are used to color the design or preview it and are never printed.
+- **Target stock:** one full stock plate per colorway. Batch size varies with the design's size.
+- **Settings:** once a stock plate is filled, settings don't change. Print time varies by plate. The current preset is **"TBD Default"** (0.2 mm layers, 7% infill, 2 walls). Older files use SUNLU / X1C presets from before that preset existed, when Cody changed printer settings by hand.
+- **Filament:** "NEW SILK SETTINGS" is Cody's custom silk profile (shown as "Custom, PLA Silk" in the CSV). Colors can't be preloaded by name in Bambu; Cody picks them from the color wheel, so colorway names are matched from the hex code.
+- **Empty plates:** ignore.
+- **Slicer errors that don't matter:** *"G-code outside of the printable area"* is usually the purge tower hanging off the plate (not a printable object) or a coloring plate Cody never prints. Cody ignores these in Bambu Studio, and so do we.
+- **Real gaps:** `_cody_fix_list.csv` lists only stock plates of the latest version that failed and have no sliced stock plate to replace them (38 plates in 28 files on 2026-10-16, mostly *"Invalid parameter value(s)"* from the older presets).

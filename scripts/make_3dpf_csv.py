@@ -48,7 +48,8 @@ def filament_label(setting_id, hexcode):
     if s.lower().startswith("generic "):
         return f"Generic, {s[8:]}, {color}"
     if "silk" in s.lower():
-        return f"Unknown, PLA Silk ({s}), {color}"
+        # "NEW SILK SETTINGS" is Cody's custom silk profile (confirmed 2026-10-16).
+        return f"Custom, PLA Silk, {color}"
     return f"Unknown, {s or 'PLA'}, {color}"
 
 
